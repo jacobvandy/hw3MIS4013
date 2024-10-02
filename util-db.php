@@ -4,7 +4,7 @@ function get_db_connection() {
   $username = "jacobvandy";
   $password = "mis4013!";
   $dbname = "mis4013-jv";
-  $port = "3306";
+  $port = 3306;
 
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
 
