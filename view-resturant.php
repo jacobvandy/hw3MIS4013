@@ -12,13 +12,13 @@
   </thead>
     <tbody>
       <?php
-while ($tacobell = $resturant->fetch_assoc()) {
+while ($resturants = $resturant->fetch_assoc()) {
   ?>
 <tr>
-  <td><?php echo $tacobell['ResturantID']; ?></td>
-  <td><?php echo $tacobell['Name']; ?></td>
-  <td><?php echo $tacobell['Rating']; ?></td>
-  <td><?php echo $tacobell['FoodType']; ?></td>
+  <td><?php echo $resturants['ResturantID']; ?></td>
+  <td><?php echo $resturants['Name']; ?></td>
+  <td><?php echo $resturants['Rating']; ?></td>
+  <td><?php echo $resturants['FoodType']; ?></td>
 
 
 
