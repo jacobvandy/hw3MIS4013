@@ -12,7 +12,7 @@
   </thead>
     <tbody>
       <?php
-while ($resturants = $resturant->fetch_assoc()) {
+while ($resturants = $restaurant->fetch_assoc()) {
   ?>
 <tr>
   <td><?php echo $resturants['ResturantID']; ?></td>
