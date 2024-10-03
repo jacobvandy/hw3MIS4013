@@ -2,7 +2,7 @@
 $pageTitle = "Home";
 include "view-header.php";
 ?>
-    <h1>Home</h1>
+    <h1>HW3 MIS4013</h1>
 <?php
 include "view-footer.php";
 ?>
