@@ -15,7 +15,7 @@
 while ($resturants = $restaurant->fetch_assoc()) {
   ?>
 <tr>
-  <td><?php echo $resturants['ResturantID']; ?></td>
+  <td><?php echo $resturants['RestaurantID']; ?></td>
   <td><?php echo $resturants['Name']; ?></td>
   <td><?php echo $resturants['Rating']; ?></td>
   <td><?php echo $resturants['FoodType']; ?></td>
