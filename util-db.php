@@ -3,7 +3,7 @@ function get_db_connection() {
   $servername = "mis4013-jv.mysql.database.azure.com";
   $username = "jacobvandy";
   $password = "mis4013!";
-  $dbname = "mis4013-jv";
+  $dbname = "MIShw3";
   $port = 3306;
 
 $conn = new mysqli($servername, $username, $password, $dbname, $port);
