@@ -1,5 +1,5 @@
 <?php
-function SelectResturant() {
+function SelectRestaurant() {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("SELECT RestaurantID, Name, Rating, FoodType FROM tacobell");
