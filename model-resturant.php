@@ -1,5 +1,5 @@
 <?php
-function SelectRestaurant() {
+function SelectResturant() {
     $conn = null; // Initialize the connection variable to null to handle it safely later
     try {
         $conn = get_db_connection();
