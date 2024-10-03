@@ -4,7 +4,7 @@ require_once("model-menu.php");
 
 $pageTitle = "Taco Bell Menu Items";
 include "view-header.php";
-$restaurant = SelectRestaurant();
+$menu = SelectMenu();
 include "view-menu.php";
 include "view-footer.php";
 ?>
