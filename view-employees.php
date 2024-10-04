@@ -18,7 +18,7 @@ while ($resturants = $restaurant->fetch_assoc()) {
   <td><?php echo $resturants['EmployeeID']; ?></td>
   <td><?php echo $resturants['LocationID']; ?></td>
   <td><?php echo $resturants['EmployeeName']; ?></td>
- <td><a href="menu-by-resturant.php?id=<?php echo $resturants['RestaurantID']; ?>">Menu Items</a></td>
+
 
 </tr>
       <?php
