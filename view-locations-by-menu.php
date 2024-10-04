@@ -16,7 +16,7 @@
   </thead>
     <tbody>
       <?php
-while (location = $locations->fetch_assoc()) {
+while ($location = $locations->fetch_assoc()) {
   ?>
 <tr>
   <td><?php echo $location['LocationID']; ?></td>
