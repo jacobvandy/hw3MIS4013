@@ -19,8 +19,8 @@
 while (location = $locations->fetch_assoc()) {
   ?>
 <tr>
-  <td><?php echo $location['MenuItemID']; ?></td>
-  <td><?php echo $location['ItemName']; ?></td>
+  <td><?php echo $location['LocationID']; ?></td>
+  <td><?php echo $location['RestaurantID']; ?></td>
   <td><?php echo $location['Price']; ?></td>
   <td><?php echo $location['City']; ?></td>
   <td><?php echo $location['State']; ?></td>
