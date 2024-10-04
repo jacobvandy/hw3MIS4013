@@ -4,7 +4,7 @@ require_once("model-locations-by-menu.php");
 
 $pageTitle = "Menu Items By Restaurant";
 include "view-header.php";
-$locations = SelectLocationsByRestaurantMenu($_POST['lid']);
+$locations = SelectLocationsByMenu($_POST['lid']);
 include "view-locations-by-menu.php";
 include "view-footer.php";
 ?>
