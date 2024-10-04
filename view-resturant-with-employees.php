@@ -16,7 +16,7 @@ while ($restaurants = $restaurant->fetch_assoc()) {
         $menu = SelectMenuByRestaurant();
         while ($menus = $menu->fetch_assoc()) {
           ?>
-          <li class="list-group-item"><?php echo $menus['ItemName']; ?> - <?php echo $menus['Price']; ?> - <?php echo $menus['State']; ?></li>
+          <li class="list-group-item"><?php echo $menus['MenuItemID']; ?> - <?php echo $menus['ItemName']; ?> - <?php echo $menus['Price']; ?> - <?php echo $menus['State']; ?></li>
 
           <?php
         }
