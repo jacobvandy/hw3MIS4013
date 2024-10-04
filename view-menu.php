@@ -21,7 +21,7 @@ while ($menus = $menu->fetch_assoc()) {
   <td><?php echo $menus['Price']; ?></td>
   <td> 
 <form method="post" action="locations-by-menu.php">
-  <input type="hidden" name="lid" value="<?php echo $menus['mi.MenuItemID']; ?>">
+  <input type="hidden" name="lid" value="<?php echo $menus['MenuItemID']; ?>">
   <button type="submit" class="btn btn-primary">Location</button>
 </form>
   </td>
