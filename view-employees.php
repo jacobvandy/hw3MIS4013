@@ -1,4 +1,4 @@
-<h1>Taco Bells Employees</h1>
+o<h1>Taco Bells Employees</h1>
 <div class="table-responsive">
   <table class="table">
   <thead>
@@ -12,12 +12,12 @@
   </thead>
     <tbody>
       <?php
-while ($resturants = $restaurant->fetch_assoc()) {
+while ($employees = $employee->fetch_assoc()) {
   ?>
 <tr>
-  <td><?php echo $resturants['EmployeeID']; ?></td>
-  <td><?php echo $resturants['LocationID']; ?></td>
-  <td><?php echo $resturants['EmployeeName']; ?></td>
+  <td><?php echo $employees['EmployeeID']; ?></td>
+  <td><?php echo $employees['LocationID']; ?></td>
+  <td><?php echo $employees['EmployeeName']; ?></td>
 
 
 </tr>
