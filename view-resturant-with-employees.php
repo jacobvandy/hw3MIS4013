@@ -13,10 +13,10 @@ while ($restaurants = $restaurant->fetch_assoc()) {
       <p class="card-text">
         <ul class="list-group">
         <?php
-        $menu = SelectMenuByRestaurant();
+        $menu = SelectMenuByRestaurant($restaurants['RestaurantID']);
         while ($menus = $menu->fetch_assoc()) {
           ?>
-          <li class="list-group-item"><?php echo $menus['MenuItemID']; ?> - <?php echo $menus['ItemName']; ?> - <?php echo $menus['Price']; ?> - <?php echo $menus['State']; ?></li>
+          <li class="list-group-item"><?php echo $menus['MenuItemID']; ?> - <?php echo $menus['ItemName']; ?> - <?php echo $menus['Price']; ?> - <?php echo $menus['City']; ?> - <?php echo $menus['State']; ?> - <?php echo $menus['Address']; ?></li>
 
           <?php
         }
