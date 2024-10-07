@@ -18,6 +18,7 @@ while ($employees = $employee->fetch_assoc()) {
   <td><?php echo $employees['EmployeeID']; ?></td>
   <td><?php echo $employees['LocationID']; ?></td>
   <td><?php echo $employees['EmployeeName']; ?></td>
+  <td><a href="employees-by-location.php?id=<?php echo $emp['LocationID']; ?>">Menu Items</a></td>
 
 
 </tr>
