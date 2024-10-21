@@ -18,7 +18,16 @@ while ($employees = $employee->fetch_assoc()) {
   <td><?php echo $employees['EmployeeID']; ?></td>
   <td><?php echo $employees['LocationID']; ?></td>
   <td><?php echo $employees['EmployeeName']; ?></td>
-  <td><a href="employees-by-location.php?id=<?php echo $emp['LocationID']; ?>">Menu Items</a></td>
+  <td>
+    
+    
+  
+  <form method="post" action="employees-by-location.php">
+  <input type="hidden" name="eid" value="<?php echo $emp['MenuItemID']; ?>">
+  <button type="submit" class="btn btn-primary">EmpID</button>
+</form>
+  
+  </td>
 
 
 </tr>
