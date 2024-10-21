@@ -1,13 +1,14 @@
 
 
 <?php
-function SelectEmpByLocation($lid) {
+function SelectEmpByLocation($eid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT mi.LocationID, mi.RestaurantID, Price, City, State, Address FROM menuitems mi join locations l
-on mi.LocationID = l.LocationID
-WHERE MenuItemID = ?");
-        $stmt->bind_param("i", $lid);
+        $stmt = $conn->prepare("SELECT e.EmployeeID, e.EmployeeName, l.Address, l.City, l.State, l.ZipCode
+FROM Employees e
+JOIN Locations l ON e.LocationID = l.LocationID;
+WHERE e.EmployeeID = ?");
+        $stmt->bind_param("i", $eid);
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
