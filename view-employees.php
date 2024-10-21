@@ -23,7 +23,7 @@ while ($employees = $employee->fetch_assoc()) {
     
   
   <form method="post" action="employees-by-location.php">
-  <input type="hidden" name="eid" value="<?php echo $emp['MenuItemID']; ?>">
+  <input type="hidden" name="eid" value="<?php echo $emp['EmployeeID']; ?>">
   <button type="submit" class="btn btn-primary">EmpID</button>
 </form>
   
