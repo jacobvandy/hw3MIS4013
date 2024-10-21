@@ -18,12 +18,9 @@ while ($employees = $employee->fetch_assoc()) {
   <td><?php echo $employees['EmployeeID']; ?></td>
   <td><?php echo $employees['LocationID']; ?></td>
   <td><?php echo $employees['EmployeeName']; ?></td>
-  <td>
-    
-    
-  
+<td>
   <form method="post" action="employees-by-location.php">
-  <input type="hidden" name="eid" value="<?php echo $emp['EmployeeID']; ?>">
+  <input type="hidden" name="eid" value="<?php echo $employees['EmployeeID']; ?>">
   <button type="submit" class="btn btn-primary">EmpID</button>
 </form>
   
