@@ -3,12 +3,12 @@
   <table class="table">
   <thead>
     <tr>
-      <th>ItemID</th>
-    <th>ItemName</th>
-    <th>Price</th>
+      <th>EmployeeID</th>
+    <th>EmployeeName</th>
+    <th>Address</th>
     <th>City</th>
     <th>State</th>
-    <th>Address</th>
+    <th>Zip Code</th>
       
 
     </tr>
@@ -16,15 +16,15 @@
   </thead>
     <tbody>
       <?php
-while ($location = $locations->fetch_assoc()) {
+while ($emps = $emp->fetch_assoc()) {
   ?>
 <tr>
-  <td><?php echo $location['LocationID']; ?></td>
-  <td><?php echo $location['RestaurantID']; ?></td>
-  <td><?php echo $location['Price']; ?></td>
-  <td><?php echo $location['City']; ?></td>
-  <td><?php echo $location['State']; ?></td>
-  <td><?php echo $location['Address']; ?></td>
+  <td><?php echo $emps['EmployeeID']; ?></td>
+  <td><?php echo $emps['EmployeeName']; ?></td>
+   <td><?php echo $emps['Address']; ?></td>
+  <td><?php echo $emps['City']; ?></td>
+  <td><?php echo $emps['State']; ?></td>
+  <td><?php echo $emps['ZipCode']; ?></td>
 
 </tr>
       <?php
