@@ -19,6 +19,10 @@
       <div class="modal-body">
       <form method="post" action="">
         <div class="mb-3">
+          <label for="eLocationID" class="form-label">LocationID </label>
+          <input type="text" class="form-control" id="eLocationID" name="eLocationID">
+        </div>
+        <div class="mb-3">
           <label for="eName" class="form-label">Employee Name </label>
           <input type="text" class="form-control" id="eName" name="eName">
         </div>
