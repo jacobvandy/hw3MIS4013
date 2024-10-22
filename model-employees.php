@@ -12,4 +12,46 @@ function SelectEmployees() {
         throw $e;
     }
 }
+
+function insertEmp($eName) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("INSERT INTO employees (EmployeeName) VALUES (?)");
+        $stmt->bind_param("s", $eName);
+        $success =  $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function updateEmp($eName, $emid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("UPDATE employees SET EmployeeName = ? WHERE EmployeeID = ?");
+        $stmt->bind_param("si", $eName, $emid);
+        $success =  $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function deleteEmp($emid) {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("DELETE FROM employees WHERE EmployeeID = ?");
+        $stmt->bind_param("i", $emid);
+        $success =  $stmt->execute();
+        $conn->close();
+        return $success;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
 ?>
