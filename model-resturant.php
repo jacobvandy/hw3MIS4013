@@ -31,7 +31,7 @@ function insertRestaurant($rName, $rRating, $rFoodType) {
 function updateRestaurant($rName, $rRating, $rFoodType, $rid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("UPDATE TacoBell SET 'Name' = ?, 'Rating' = ?, 'FoodType' = ? WHERE RetaurantID = ?");
+        $stmt = $conn->prepare("UPDATE TacoBell SET 'Name' = ?, 'Rating' = ?, 'FoodType' = ? WHERE RestaurantID = ?");
         $stmt->bind_param("sdsi", $rName, $rRating, $rFoodType, $rid);
         $success =  $stmt->execute();
         $conn->close();
