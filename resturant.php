@@ -15,6 +15,14 @@ if (isset($_POST['actionType'])) {
    }
   
    break;
+   case "Edit":
+   if (updateRestaurant($_POST['rName'], $_POST['rRating'], $_POST['rFoodType'], $_POST['rid'])) {
+    echo '<div class="alert alert-success" role="alert">Restaurant Edited</div>';
+   } else {
+    '<div class="alert alert-danger" role="alert">Error editing Restaurant</div>';
+   }
+  
+   break;
   case "Delete":
    if (deleteRestaurant($_POST['rid'])) {
     echo '<div class="alert alert-success" role="alert">Restaurant Deleted</div>';
