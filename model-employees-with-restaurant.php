@@ -32,11 +32,11 @@ WHERE e.EmployeeID = ?");
     }
 }
 
-function insertEmpLoc($elRestaurantID, $elAddress, $elCity, $elState, $elZipCode) {
+function insertEmpLoc($elAddress, $elCity, $elState, $elZipCode) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO locations (RestaurantID, Address, City, State, Zipcode) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("isssi", $elRestaurantID, $elAddress, $elCity, $elState, $elZipCode);
+        $stmt = $conn->prepare("INSERT INTO locations (Address, City, State, Zipcode) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("sssi", $elAddress, $elCity, $elState, $elZipCode);
         $success =  $stmt->execute();
         
         $conn->close();
