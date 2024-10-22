@@ -32,11 +32,15 @@ WHERE e.EmployeeID = ?");
     }
 }
 
-function insertEmpLoc($elAddress, $elCity, $elState, $elZipCode) {
+function insertEmpLoc(&elEmpID, $elAddress, $elCity, $elState, $elZipCode, $elRID) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO locations (Address, City, State, Zipcode) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("sssi", $elAddress, $elCity, $elState, $elZipCode);
+        $stmt = $conn->prepare("INSERT INTO locations (EmployeeID, Address, City, State, Zipcode) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("isssi", $elEmpID, $elAddress, $elCity, $elState, $elZipCode,);
+        $success =  $stmt->execute();
+
+        $stmt = $conn->prepare("INSERT INTO tacobell (RestaurantID) VALUES (?)");
+        $stmt->bind_param("i", $elRID);
         $success =  $stmt->execute();
         
         $conn->close();
