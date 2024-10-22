@@ -9,10 +9,10 @@ include "view-header.php";
 if (isset($_POST['actionType'])) {
  switch ($_POST['actionType']) {
    case "Add":
-   if (insertEmpLoc($_POST['elAddress'], $_POST['elCity'], $_POST['elState'], $_POST['elZipCode'])) {
-    echo '<div class="alert alert-success" role="alert">Employee Added</div>';
+   if (insertEmpLoc($_POST['elEmpID'], $_POST['elAddress'], $_POST['elCity'], $_POST['elState'], $_POST['elZipCode'])) {
+    echo '<div class="alert alert-success" role="alert">Employee with restaurant Added</div>';
    } else {
-    '<div class="alert alert-danger" role="alert">Error adding Employee</div>';
+    '<div class="alert alert-danger" role="alert">Error adding Emoplyee with restaurant</div>';
    }
   
    break;
