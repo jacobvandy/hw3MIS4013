@@ -18,7 +18,10 @@
       </div>
       <div class="modal-body">
       <form method="post" action="">
-        
+        <div class="mb-3">
+          <label for="elEmpID" class="form-label">Emp ID  </label>
+          <input type="text" class="form-control" id="elEmpID" name="elEmpID">
+        </div>  
         <div class="mb-3">
           <label for="elAddress" class="form-label">Address  </label>
           <input type="text" class="form-control" id="elAddress" name="elAddress">
