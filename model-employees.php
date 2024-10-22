@@ -13,11 +13,11 @@ function SelectEmployees() {
     }
 }
 
-function insertEmp($eName) {
+function insertEmp($eLocationID, $eName) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO employees (EmployeeName) VALUES (?)");
-        $stmt->bind_param("s", $eName);
+        $stmt = $conn->prepare("INSERT INTO employees (LocationID, EmployeeName) VALUES (?,?)");
+        $stmt->bind_param("is",$eLocationID, $eName);
         $success =  $stmt->execute();
         $conn->close();
         return $success;
