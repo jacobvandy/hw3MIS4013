@@ -26,6 +26,10 @@
           <label for="rRating" class="form-label">Restaurant Rating  </label>
           <input type="text" class="form-control" id="rRating" name="rRating">
         </div>  
+         <div class="mb-3">
+          <label for="rFoodType" class="form-label">Food Type  </label>
+          <input type="text" class="form-control" id="rFoodType" name="rFoodType">
+        </div>  
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
       </div>
