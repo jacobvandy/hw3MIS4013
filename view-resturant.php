@@ -44,7 +44,9 @@ while ($resturants = $restaurant->fetch_assoc()) {
 </form>
   </td>
   <td>
-     
+      <?php
+include "view-resturant-editform.php";
+?>
   </td>
   <td><a href="menu-by-resturant.php?id=<?php echo $resturants['RestaurantID']; ?>">Menu Items</a></td>
 
