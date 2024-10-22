@@ -30,6 +30,7 @@
           <label for="rFoodType" class="form-label">Food Type  </label>
           <input type="text" class="form-control" id="rFoodType" name="rFoodType">
         </div>  
+        <input type="hidden" name="actionType" value="Add">
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
       </div>
