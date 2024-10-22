@@ -18,10 +18,7 @@
       </div>
       <div class="modal-body">
       <form method="post" action="">
-        <div class="mb-3">
-          <label for="elRestaurantID" class="form-label">Restaurant ID  </label>
-          <input type="text" class="form-control" id="elRestaurantID" name="elRestaurantID">
-        </div>
+        
         <div class="mb-3">
           <label for="elAddress" class="form-label">Address  </label>
           <input type="text" class="form-control" id="elAddress" name="elAddress">
