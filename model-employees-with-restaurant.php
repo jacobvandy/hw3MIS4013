@@ -32,7 +32,7 @@ WHERE e.EmployeeID = ?");
     }
 }
 
-function insertEmpLoc(&elEmpID, $elAddress, $elCity, $elState, $elZipCode, $elRID) {
+function insertEmpLoc($elEmpID, $elAddress, $elCity, $elState, $elZipCode, $elRID) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("INSERT INTO locations (EmployeeID, Address, City, State, Zipcode) VALUES (?, ?, ?, ?, ?)");
