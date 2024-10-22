@@ -40,7 +40,10 @@
           <label for="elZipCode" class="form-label">Zip Code </label>
           <input type="text" class="form-control" id="elZipCode" name="elZipCode">
         </div>  
-        
+         <div class="mb-3">
+          <label for="elRID" class="form-label">Restaurant ID  </label>
+          <input type="text" class="form-control" id="elRID" name="elRID">
+        </div>  
         <input type="hidden" name="actionType" value="Add">
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
