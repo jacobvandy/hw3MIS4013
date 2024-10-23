@@ -35,7 +35,7 @@ WHERE e.EmployeeID = ?");
 function insertEmpLoc($elName, $elAddress, $elCity, $elState, $elZipCode) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO locations (EmployeeName, Address, City, State, Zipcode) VALUES (?, ?, ?, ?, ?)");
+        $stmt = $conn->prepare("INSERT INTO locations (Address, City, State, Zipcode) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("sssi", $elAddress, $elCity, $elState, $elZipCode,);
         $success =  $stmt->execute();
 
