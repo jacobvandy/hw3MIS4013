@@ -32,15 +32,15 @@ WHERE e.EmployeeID = ?");
     }
 }
 
-function insertEmpLoc($elName, $elAddress, $elCity, $elState, $elZipCode) {
+function insertEmpLoc($elName, $elAddress, $elCity, $elState, $elZipCode, $elRID, $elLocID ) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("INSERT INTO locations (Address, City, State, Zipcode) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("sssi", $elAddress, $elCity, $elState, $elZipCode,);
+        $stmt = $conn->prepare("INSERT INTO locations (Address, City, State, Zipcode, RestaurantID) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssii", $elAddress, $elCity, $elState, $elZipCode, $elRID);
         $success =  $stmt->execute();
 
-        $stmt = $conn->prepare("INSERT INTO employees (EmployeeName) VALUES (?)");
-        $stmt->bind_param("s", $elName);
+        $stmt = $conn->prepare("INSERT INTO employees (EmployeeName, LocationID) VALUES (?,?)");
+        $stmt->bind_param("si", $elName, $elLocID);
         $success =  $stmt->execute();
         
         $conn->close();
@@ -51,11 +51,11 @@ function insertEmpLoc($elName, $elAddress, $elCity, $elState, $elZipCode) {
     }
 }
 
-function updateEmpLoc($elRestaurantID, $elAddress, $elCity, $elState, $elZipCode, $locid) {
+function updateEmpLoc($elRID, $elAddress, $elCity, $elState, $elZipCode, $locid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("UPDATE locations SET RestaurantID = ?,Address = ?, City= ?, State= ?, ZipCode= ? WHERE LocationID = ?");
-        $stmt->bind_param("isssii", $elRestaurantID, $elAddress, $elCity, $elState, $elZipCode, $locid);
+        $stmt->bind_param("isssii", $elRID, $elAddress, $elCity, $elState, $elZipCode, $locid);
         $success =  $stmt->execute();
         $conn->close();
         return $success;
