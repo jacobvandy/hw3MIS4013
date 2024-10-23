@@ -26,8 +26,8 @@ while ($restaurants = $restaurant->fetch_assoc()) {
         $eid = SelectEmpByLocation($restaurants['RestaurantID']);
         while ($eids = $eid->fetch_assoc()) {
           ?>
-          <li class="list-group-item"><?php echo $eids['EmployeeID']; ?> - <?php echo $eids['EmployeeName']; ?> - <?php echo $eids['Address']; ?> - <?php echo $eids['City']; ?> - <?php echo $eids['State']; ?> - <?php echo $eids['ZipCode']; ?></li>
-          <li <form method="post" action="">
+          <li class="list-group-item"><?php echo $eids['EmployeeID']; ?> - <?php echo $eids['EmployeeName']; ?> - <?php echo $eids['Address']; ?> - <?php echo $eids['City']; ?> - <?php echo $eids['State']; ?> - <?php echo $eids['ZipCode']; ?>
+         <form method="post" action="">
                 <input type="hidden" name="locid" value="<?php echo $eids['LocationID']; ?>">
                 <input type="hidden" name="actionType" value="Delete">
                 <button type="submit" class="btn btn-primary" onclick="return confirm('Confirm Changes?');">
@@ -36,8 +36,7 @@ while ($restaurants = $restaurant->fetch_assoc()) {
               </svg>
                 </button>
               </form>
-          </li>
-          <li 
+          
               <?php
 include "view-employees-editform.php";
 ?>
