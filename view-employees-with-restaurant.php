@@ -14,7 +14,7 @@ include "view-employees-with-restaurant-newform.php";
     
  
       <?php
-while ($restaurants = $locations->fetch_assoc()) {
+while ($restaurants = $restaurant->fetch_assoc()) {
   ?>
   <div class="card">
    
@@ -23,7 +23,7 @@ while ($restaurants = $locations->fetch_assoc()) {
       <p class="card-text">
         <ul class="list-group">
         <?php
-        $eid = SelectEmpByLocation($restaurants['RestaurantID']);
+        $eid = SelectEmpByLocation($locations['LocationID']);
         while ($eids = $eid->fetch_assoc()) {
           ?>
           <li class="list-group-item"><?php echo $eids['EmployeeID']; ?> - <?php echo $eids['EmployeeName']; ?> - <?php echo $eids['Address']; ?> - <?php echo $eids['City']; ?> - <?php echo $eids['State']; ?> - <?php echo $eids['ZipCode']; ?>
