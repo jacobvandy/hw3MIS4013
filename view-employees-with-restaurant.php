@@ -14,7 +14,7 @@ include "view-employees-with-restaurant-newform.php";
     
  
       <?php
-while ($restaurants = $restaurant->fetch_assoc()) {
+while ($restaurants = $locations->fetch_assoc()) {
   ?>
   <div class="card">
    
