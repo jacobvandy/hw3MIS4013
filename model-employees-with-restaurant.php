@@ -69,8 +69,13 @@ function deleteEmpLoc($locid) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("DELETE FROM locations WHERE LocationID = ?");
-        $stmt->bind_param("i", $locid);
+        $stmt->bind_param("i", $elLocID);
         $success =  $stmt->execute();
+
+     
+
+
+        
         $conn->close();
         return $success;
     } catch (Exception $e) {
