@@ -28,7 +28,7 @@ while ($restaurants = $restaurant->fetch_assoc()) {
           ?>
           <li class="list-group-item"><?php echo $eids['EmployeeID']; ?> - <?php echo $eids['EmployeeName']; ?> - <?php echo $eids['Address']; ?> - <?php echo $eids['City']; ?> - <?php echo $eids['State']; ?> - <?php echo $eids['ZipCode']; ?> - <?php echo $eids['LocationID']; ?>
          <form method="post" action="">
-                <input type="hidden" name="elLocID" value="<?php echo $eids['LocationID']; ?>">
+                <input type="hidden" name="emID" value="<?php echo $eids['EmployeeID']; ?>">
                 <input type="hidden" name="actionType" value="Delete">
                 <button type="submit" class="btn btn-primary" onclick="return confirm('Confirm Changes?');">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
