@@ -1,4 +1,4 @@
-
+l
 <?php
 function SelectRestaurant() {
     try {
@@ -65,7 +65,7 @@ function updateEmpLoc($elRID, $elAddress, $elCity, $elState, $elZipCode, $locid)
     }
 }
 
-function deleteEmpLoc($locid) {
+function deleteEmpLoc($elLocID) {
     try {
         $conn = get_db_connection();
         $stmt = $conn->prepare("DELETE FROM locations WHERE LocationID = ?");
