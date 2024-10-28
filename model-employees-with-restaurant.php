@@ -20,7 +20,7 @@ function SelectEmpByLocation($eid) {
         $stmt = $conn->prepare("SELECT e.EmployeeID, e.EmployeeName, l.Address, l.City, l.State, l.ZipCode, e.LocationID
 FROM Employees e
 JOIN Locations l ON e.LocationID = l.LocationID
-WHERE e.EmployeeID = ?");
+WHERE e.LocationID = ?");
         $stmt->bind_param("i", $eid);
         $stmt->execute();
         $result = $stmt->get_result();
