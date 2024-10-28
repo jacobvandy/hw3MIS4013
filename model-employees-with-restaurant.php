@@ -65,18 +65,14 @@ function updateEmpLoc($elRID, $elAddress, $elCity, $elState, $elZipCode, $locid)
     }
 }
 
-function deleteEmpLoc($emID, $elLocID) {
+function deleteEmpLoc($emid) {
     try {
         $conn = get_db_connection();
       
          $stmt = $conn->prepare("DELETE FROM employees WHERE EmployeeID = ?");
-        $stmt->bind_param("i", $emID);
+        $stmt->bind_param("i", $emid);
         $success =  $stmt->execute();
 
-
-         $stmt = $conn->prepare("DELETE FROM locations WHERE LocationID = ?");
-        $stmt->bind_param("i", $elLocID);
-        $success =  $stmt->execute();
         
         $conn->close();
         return $success;
