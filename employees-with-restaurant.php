@@ -18,7 +18,13 @@ if (isset($_POST['actionType'])) {
    break;
 
 
-
+  case "Edit":
+   if (updateEmpLoc($_POST['elAddress'], $_POST['elCity'], $_POST['elState'], $_POST['elZipcode'], $_POST['elRID'], $_POST['elLocID'])) {
+    echo '<div class="alert alert-success" role="alert">Employee Edited</div>';
+   } else {
+    '<div class="alert alert-danger" role="alert">Error editing Employee</div>';
+   }
+   break;
   
 
   case "Delete":
