@@ -26,7 +26,7 @@ while ($restaurants = $restaurant->fetch_assoc()) {
         $eid = SelectEmpByLocation($restaurants['RestaurantID']);
         while ($eids = $eid->fetch_assoc()) {
           ?>
-          <li class="list-group-item"><?php echo $eids['EmployeeID']; ?> - <?php echo $eids['EmployeeName']; ?> - <?php echo $eids['Address']; ?> - <?php echo $eids['City']; ?> - <?php echo $eids['State']; ?> - <?php echo $eids['ZipCode']; ?>
+          <li class="list-group-item"><?php echo $eids['EmployeeID']; ?> - <?php echo $eids['EmployeeName']; ?> - <?php echo $eids['Address']; ?> - <?php echo $eids['City']; ?> - <?php echo $eids['State']; ?> - <?php echo $eids['ZipCode'] - <?php echo $eids['RestaurantID']; ?>
          <form method="post" action="">
                 <input type="hidden" name="locid" value="<?php echo $eids['LocationID']; ?>">
                 <input type="hidden" name="actionType" value="Delete">
