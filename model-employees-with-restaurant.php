@@ -51,12 +51,13 @@ function insertEmpLoc($elName, $elAddress, $elCity, $elState, $elZipCode, $elRID
     }
 }
 
-function updateEmpLoc($elRID, $elAddress, $elCity, $elState, $elZipCode, $locid) {
+function updateEmpLoc($elAddress, $elCity, $elState, $elZipCode, $elRID, $elLocID) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("UPDATE locations SET RestaurantID = ?,Address = ?, City= ?, State= ?, ZipCode= ? WHERE LocationID = ?");
-        $stmt->bind_param("isssii", $elRID, $elAddress, $elCity, $elState, $elZipCode, $locid);
+        $stmt = $conn->prepare("UPDATE locations SET Address = ?, City= ?, State= ?, ZipCode= ?, RestaurantID = ? WHERE LocationID = ?");
+        $stmt->bind_param("sssiii", $elAddress, $elCity, $elState, $elZipCode, $elRID, $elLocID);
         $success =  $stmt->execute();
+
         $conn->close();
         return $success;
     } catch (Exception $e) {
