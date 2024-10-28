@@ -17,7 +17,7 @@ function SelectRestaurant() {
 function SelectEmpByLocation($eid) {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT e.EmployeeID, e.EmployeeName, l.Address, l.City, l.State, l.ZipCode
+        $stmt = $conn->prepare("SELECT e.EmployeeID, e.EmployeeName, l.Address, l.City, l.State, l.ZipCode, e.LocationID
 FROM Employees e
 JOIN Locations l ON e.LocationID = l.LocationID
 WHERE e.EmployeeID = ?");
