@@ -32,6 +32,36 @@ WHERE e.LocationID = ?");
     }
 }
 
+function SelectRestaurantForInput() {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("SELECT EmployeeID, EmployeeName FROM employeees ORDER BY EmployeeName");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $result;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+function SelectEmpForInput() {
+    try {
+        $conn = get_db_connection();
+        $stmt = $conn->prepare("SELECT RestaurantID, Name FROM tacobell ORDER BY Name");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $conn->close();
+        return $result;
+    } catch (Exception $e) {
+        $conn->close();
+        throw $e;
+    }
+}
+
+
+
 function insertEmpLoc($elName, $elAddress, $elCity, $elState, $elZipCode, $elRID, $elLocID ) {
     try {
         $conn = get_db_connection();
