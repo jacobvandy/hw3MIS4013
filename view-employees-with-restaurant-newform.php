@@ -42,7 +42,12 @@
         </div>  
          <div class="mb-3">
           <label for="elRID" class="form-label">Restaurant ID  </label>
-          <input type="text" class="form-control" id="elRID" name="elRID">
+
+      <?php
+        $restaurantList = SelectRestaurantForInput();
+        include "view-restaurant-input-list.php";
+      ?>
+          
         </div>  
           <div class="mb-3">
           <label for="elLocID" class="form-label">Location ID  </label>
