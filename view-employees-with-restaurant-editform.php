@@ -36,7 +36,7 @@
         </div>
 
           <div class="mb-3">
-          <label for="elRID<?php echo $eids['LocationID']; ?>" class="form-label">RestaurantID  </label>
+          <label for="elRID<?php echo $eids['LocationID']; ?>" class="form-label">Restaurant  </label>
       <?php
         $restaurantList = SelectRestaurantForInput();
         $selectedEmployee = $eids['RestaurantID'];
