@@ -35,7 +35,7 @@ WHERE e.LocationID = ?");
 function SelectRestaurantForInput() {
     try {
         $conn = get_db_connection();
-        $stmt = $conn->prepare("SELECT EmployeeID, EmployeeName FROM employeees ORDER BY EmployeeName");
+        $stmt = $conn->prepare("SELECT EmployeeID, EmployeeName FROM employees ORDER BY EmployeeName");
         $stmt->execute();
         $result = $stmt->get_result();
         $conn->close();
