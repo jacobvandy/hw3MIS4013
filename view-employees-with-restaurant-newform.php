@@ -44,7 +44,7 @@
           <label for="elRID" class="form-label">Restaurant ID  </label>
 
       <?php
-        $restaurantList = SelectRestaurantForInput();
+        $restaurantList = SelectEmpForInput();
         include "view-restaurant-input-list.php";
       ?>
           
