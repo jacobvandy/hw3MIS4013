@@ -2,7 +2,7 @@
 <?php 
 while ($restaurantItem = $restaurantList->fetch_assoc()) {
 ?>
-   <option value="<?php echo ($restaurantItem['RestaurantID']; ?>" ><?php echo ($restaurantItem['Name']; ?></option>
+   <option value="<?php echo $restaurantItem['RestaurantID']; ?>" ><?php echo $restaurantItem['Name']; ?></option>
 <?php  
 }
 ?>
