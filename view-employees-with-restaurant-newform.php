@@ -41,7 +41,7 @@
           <input type="text" class="form-control" id="elZipCode" name="elZipCode">
         </div>  
          <div class="mb-3">
-          <label for="elRID" class="form-label">Restaurant ID  </label>
+          <label for="elRID" class="form-label">Restaurant</label>
 
       <?php
         $restaurantList = SelectEmpForInput();
