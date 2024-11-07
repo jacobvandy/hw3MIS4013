@@ -45,6 +45,7 @@
 
       <?php
         $restaurantList = SelectRestaurntForInput();
+        $selectedEmployee = 0;
         include "view-restaurant-input-list.php";
       ?>
           
