@@ -2,7 +2,7 @@
 <?php 
 while ($restaurantItem = $restaurantList->fetch_assoc()) {
 $selText = "";
-if ($selectedEmployee == $restaurantItem['RestaurantID'];) {
+if ($selectedEmployee == $restaurantItem['RestaurantID']) {
    $selText = "selected";
 }
 ?>
