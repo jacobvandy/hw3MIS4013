@@ -15,6 +15,8 @@ include "view-header.php";
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z"/>
 </svg>
     </button>
+
+     PROMO CODE:BOGOTACO<button onclick="copyToClipboard('BOGOTACO')">Copy Text</button>
     <script>
     "use strict";
         document.querySelector("#plusbtn").addEventListener("click", () =>
@@ -31,6 +33,15 @@ include "view-header.php";
             document.querySelector("#tbimage").width=w;
         }
         );
+           function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Copied to clipboard!");
+        }).catch((error) => {
+            console.error("Error copying text: ", error);
+        });
+        }
+
+
 
         
     </script>
