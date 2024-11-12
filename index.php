@@ -19,7 +19,7 @@ include "view-header.php";
      PROMO CODE:BOGOTACO <button onclick="copyToClipboard('BOGOTACO')">Copy Code</button>
 
 <br/>
- <button onclick="hideImage('BOGOTACO')">Taco Bell Decades</button>
+ <button onclick="hideImage()">Taco Bell Decades</button>
     <script>
     "use strict";
         document.querySelector("#plusbtn").addEventListener("click", () =>
