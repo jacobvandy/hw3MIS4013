@@ -20,6 +20,7 @@ include "view-header.php";
 
 <br/>
  <button onclick="hideImage()">Taco Bell Decades</button>
+
     <script>
     "use strict";
         document.querySelector("#plusbtn").addEventListener("click", () =>
@@ -48,9 +49,7 @@ include "view-header.php";
     const img = document.getElementById("tbimage");
     img.style.display = img.style.display === "none" ? "block" : "none";
 }
-}
 
-}
 
 
 
