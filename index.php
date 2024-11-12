@@ -16,7 +16,7 @@ include "view-header.php";
 </svg>
     </button>
     <script>
-    
+    "use strict";
         document.querySelector("#plusbtn").addEventListener("click", () =>
         {
             let w=document.querySelector("#tbimage").width;
