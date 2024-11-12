@@ -31,10 +31,12 @@ include "view-header.php";
             document.querySelector("#tbimage").width=w;
         }
         );
+
+        function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
     </script>
 
-function toggleDarkMode() {
-    document.body.classList.toggle("dark-mode");
+
 }
 <?php
 include "view-footer.php";
