@@ -3,7 +3,7 @@ $pageTitle = "Home";
 include "view-header.php";
 ?>
     <h1>HW4 MIS4013</h1>
-<img id="tbimage" src="TBdecades.jpg" style="height:200px;"/>
+<img id="tbimage" src="TBdecades.jpg" style="height:300px;"/>
 
 
 <button id="plusbtn"class="btn btn-primary">
@@ -19,7 +19,9 @@ include "view-header.php";
      PROMO CODE:BOGOTACO <button onclick="copyToClipboard('BOGOTACO')">Copy Code</button>
 
 <br/>
- <button onclick="hideImage()">Taco Bell Decades</button>
+ <button onclick="hideImage()">View Taco Bell Decades</button>
+<br/>
+<button onclick="rotateImage(45)">Rotate Image</button>
 
     <script>
     "use strict";
@@ -45,6 +47,12 @@ include "view-header.php";
         });
         }
 
+
+function rotateImage(degrees) {
+    const img = document.getElementById("tbimage");
+    img.style.transform = `rotate(${degrees}deg)`;
+}
+        
        function hideImage() {
     const img = document.getElementById("tbimage");
     img.style.display = img.style.display === "none" ? "block" : "none";
