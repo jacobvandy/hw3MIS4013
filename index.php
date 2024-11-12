@@ -32,10 +32,17 @@ include "view-header.php";
         }
         );
 
-        function DarkMode() {
-    document.body.classList.toggle("dark-mode");
+            function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Copied to clipboard!");
+        }).catch((error) => {
+            console.error("Error copying text: ", error);
+        });
         }
-        <button onclick="DarkMode()">Dark Mode</button>
+    
+     PROMO CODE:BOGOTACO<button onclick="copyToClipboard('BOGOTACO')">Copy Text</button>
+
+        
     </script>
 
 
