@@ -16,7 +16,7 @@ include "view-header.php";
 </svg>
     </button>
     <script>
-        "use strict";
+    
         document.querySelector("#plusbtn").addEventListener("click", () =>
         {
             let w=document.querySelector("#tbimage").width;
@@ -32,12 +32,14 @@ include "view-header.php";
         }
         );
 
-        function toggleDarkMode() {
+        function DarkMode() {
     document.body.classList.toggle("dark-mode");
+        }
+        <button onclick="DarkMode()">Dark Mode</button>
     </script>
 
 
-}
+
 <?php
 include "view-footer.php";
 ?>
