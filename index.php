@@ -45,7 +45,7 @@ include "view-header.php";
         }
 
        function hideImage() {
-    const img = document.getElementById("TBdecades.jpg");
+    const img = document.getElementById("#tbimage");
     img.style.display = img.style.display === "none" ? "block" : "none";
 }
 }
