@@ -17,6 +17,9 @@ include "view-header.php";
     </button>
 
      PROMO CODE:BOGOTACO <button onclick="copyToClipboard('BOGOTACO')">Copy Code</button>
+
+<br/>
+ <button onclick="hideImage('BOGOTACO')">Taco Bell Decades</button>
     <script>
     "use strict";
         document.querySelector("#plusbtn").addEventListener("click", () =>
@@ -41,11 +44,10 @@ include "view-header.php";
         });
         }
 
-        function CurrentDateTime() {
-    const now = new Date();
-    return now.toLocaleString();
-
-    console.log(CurrentDateTime());
+       function hideImage() {
+    const img = document.getElementById("TBdecades.jpg");
+    img.style.display = img.style.display === "none" ? "block" : "none";
+}
 }
 
 }
@@ -60,3 +62,5 @@ include "view-header.php";
 <?php
 include "view-footer.php";
 ?>
+
+
