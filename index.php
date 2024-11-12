@@ -16,7 +16,7 @@ include "view-header.php";
 </svg>
     </button>
 
-     PROMO CODE:BOGOTACO<button onclick="copyToClipboard('BOGOTACO')">Copy Text</button>
+     PROMO CODE:BOGOTACO <button onclick="copyToClipboard('BOGOTACO')">Copy Code</button>
     <script>
     "use strict";
         document.querySelector("#plusbtn").addEventListener("click", () =>
@@ -35,9 +35,9 @@ include "view-header.php";
         );
            function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(() => {
-            alert("Copied to clipboard!");
+            alert("Copied");
         }).catch((error) => {
-            console.error("Error copying text: ", error);
+            console.error("Error copying:", error);
         });
         }
 
