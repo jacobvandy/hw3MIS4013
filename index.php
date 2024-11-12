@@ -41,6 +41,15 @@ include "view-header.php";
         });
         }
 
+        function CurrentDateTime() {
+    const now = new Date();
+    return now.toLocaleString();
+
+    console.log(CurrentDateTime());
+}
+
+}
+
 
 
         
