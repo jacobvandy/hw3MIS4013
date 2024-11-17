@@ -1,4 +1,4 @@
-<h1>Taco Bells</h1>
+<h1>Number of Employees per Taco Bell</h1>
 
 <div>
   <canvas id="myChart"></canvas>
