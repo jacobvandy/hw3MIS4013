@@ -7,52 +7,34 @@
  <h1>Menu and their Prices</h1>
   
 
-<?php
-
-$menu = SelectMenu();
-$prices = [];
-$itemNames = [];
-while ($menus = $menu->fetch_assoc()) {
-    $prices[] = $menus['Price'];
-    $itemNames[] = addslashes($menus['ItemName']);
-}
-
-
-echo "
+<div id="menuChart" style="width: 600px; height: 400px;"></div>
 <script>
-    // ECharts instance initialization
+    <?php
+    $prices = [];
+    $itemNames = [];
+    while ($menus = $menu->fetch_assoc()) {
+        $prices[] = $menus['Price'];
+        $itemNames[] = addslashes($menus['ItemName']);
+    }
+    ?>
+    const prices = <?php echo json_encode($prices); ?>;
+    const itemNames = <?php echo json_encode($itemNames); ?>;
+
     const chartDom = document.getElementById('menuChart');
     const myChart = echarts.init(chartDom);
 
-    // Chart configuration
     const option = {
-        title: {
-            text: 'Menu Prices',
-            left: 'center'
-        },
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: { type: 'shadow' }
-        },
-        xAxis: {
-            type: 'category',
-            data: " . json_encode($itemNames) . "
-        },
-        yAxis: {
-            type: 'value',
-            name: 'Price ($)'
-        },
+        title: { text: 'Menu Prices', left: 'center' },
+        tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+        xAxis: { type: 'category', data: itemNames },
+        yAxis: { type: 'value', name: 'Price ($)' },
         series: [{
             name: 'Price',
             type: 'bar',
-            data: " . json_encode($prices) . ",
-            itemStyle: {
-                color: '#5470C6'
-            }
+            data: prices,
+            itemStyle: { color: '#5470C6' }
         }]
     };
 
-    // Render the chart
     myChart.setOption(option);
 </script>
-";
