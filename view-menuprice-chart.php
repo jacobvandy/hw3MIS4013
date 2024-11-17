@@ -34,6 +34,7 @@ while ($menus = $menu->fetch_assoc()) {
         },
         xaxis: {
           categories: [<?php
+$menu = SelectMenu();
 while ($menus = $menu->fetch_assoc()) {
     echo $menus['ItemName'];
 }
