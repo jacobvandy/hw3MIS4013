@@ -14,7 +14,7 @@
 
   new Chart(ctx, {
     type: 'pie',
-    {
+    data: {
     datasets: [{
         data: [
 <?php
@@ -28,7 +28,7 @@ while ($resturants = $restaurant->fetch_assoc()) {
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
 <?php
-$resturants = SelectRestaurant();
+$resturant = SelectRestaurant();
 while ($resturants = $restaurant->fetch_assoc()) {
     echo "'" . $resturants['Name'] . "', ";
 }
