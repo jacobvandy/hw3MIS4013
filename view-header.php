@@ -37,6 +37,9 @@
         <li class="nav-item">
           <a class="nav-link" href="restaurant-chart.php">Restaurant and Employees Chart</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="menu-chart.php">Menu Chart</a>
+        </li>
       </ul>
       
     </div>
