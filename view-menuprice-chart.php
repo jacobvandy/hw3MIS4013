@@ -5,45 +5,44 @@
 
 
      
+<?php
+$menu = SelectMenu();
 
+
+$prices = [];
+$itemNames = [];
+while ($menus = $menu->fetch_assoc()) {
+    $prices[] = $menus['Price'];
+    $itemNames[] = '"' . addslashes($menus['ItemName']) . '"';
+}
+?>
 
 <script>
- var options = {
-          series: [{
-          data: [
-<?php
-while ($menus = $menu->fetch_assoc()) {
-    echo $menus['Price'];
-}
-  ?> 
-]
-        }],
-          chart: {
-          type: 'bar',
-          height: 350
-        },
-        plotOptions: {
-          bar: {
+var options = {
+    series: [{
+        data: [<?php echo implode(',', $prices); ?>]
+    }],
+    chart: {
+        type: 'bar',
+        height: 350
+    },
+    plotOptions: {
+        bar: {
             borderRadius: 4,
             borderRadiusApplication: 'end',
             horizontal: true,
-          }
-        },
-        dataLabels: {
-          enabled: false
-        },
-        xaxis: {
-          categories: [<?php
-$menu = SelectMenu();
-while ($menus = $menu->fetch_assoc()) {
-    echo $menus['ItemName'];
-}
-  ?> ],
         }
-        };
+    },
+    dataLabels: {
+        enabled: false
+    },
+    xaxis: {
+        categories: [<?php echo implode(',', $itemNames); ?>]
+    }
+};
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
 </script>
 
 
