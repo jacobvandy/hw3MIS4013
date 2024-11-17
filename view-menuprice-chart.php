@@ -8,19 +8,9 @@
   
 
 
-<?php
-$menu = SelectMenu();
-$prices = [];
-$itemNames = [];
 
-while ($menus = $menu->fetch_assoc()) {
-    $prices[] = $menus['Price'];
-    $itemNames[] = addslashes($menus['ItemName']);
-}
-?>
 <script>
-const prices = <?php echo json_encode($prices); ?>;
-    const itemNames = <?php echo json_encode($itemNames); ?>;
+
 
    
     const chartDom = document.getElementById('menuChart');
@@ -38,7 +28,13 @@ const prices = <?php echo json_encode($prices); ?>;
         },
         xAxis: {
             type: 'category',
-            data: itemNames 
+            data: <?php
+$menu = SelectMenu();
+
+while ($menus = $menu->fetch_assoc()) {
+    echo $menus['ItemName'];
+}
+?>
         },
         yAxis: {
             type: 'value',
@@ -47,7 +43,13 @@ const prices = <?php echo json_encode($prices); ?>;
         series: [{
             name: 'Price',
             type: 'bar',
-            data: prices,
+            data: <?php
+$menu = SelectMenu();
+
+while ($menus = $menu->fetch_assoc()) {
+    echo $menus['price'];
+}
+?>,
             itemStyle: {
                 color: '#5470C6'
             }
