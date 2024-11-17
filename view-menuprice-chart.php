@@ -1,50 +1,59 @@
 
 
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 
 
      
  <h1>Menu and their Prices</h1>
-    <div id="chart"></div>
-
-    <?php
- 
-    $menu = SelectMenu();
+  
 
 
-    $prices = [];
-    $itemNames = [];
-    while ($menus = $menu->fetch_assoc()) {
-        $prices[] = $menus['Price']; 
-        $itemNames[] = '"' . addslashes($menus['ItemName']) . '"'; 
-    }
-    ?>
+<?php
+$menu = SelectMenu();
+$prices = [];
+$itemNames = [];
 
-    <script>
+while ($menus = $menu->fetch_assoc()) {
+    $prices[] = $menus['Price'];
+    $itemNames[] = addslashes($menus['ItemName']);
+}
+?>
+<script>
+const prices = <?php echo json_encode($prices); ?>;
+    const itemNames = <?php echo json_encode($itemNames); ?>;
 
-    var options = {
+   
+    const chartDom = document.getElementById('menuChart');
+    const myChart = echarts.init(chartDom);
+
+
+    const option = {
+        title: {
+            text: 'Menu Prices',
+            left: 'center'
+        },
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'shadow' }
+        },
+        xAxis: {
+            type: 'category',
+            data: itemNames 
+        },
+        yAxis: {
+            type: 'value',
+            name: 'Price ($)'
+        },
         series: [{
-            data: [<?php echo implode(',', $prices); ?>] 
-        chart: {
+            name: 'Price',
             type: 'bar',
-            height: 350
-        },
-        plotOptions: {
-            bar: {
-                borderRadius: 4,
-                borderRadiusApplication: 'end',
-                horizontal: true,
+            data: prices,
+            itemStyle: {
+                color: '#5470C6'
             }
-        },
-        dataLabels: {
-            enabled: false
-        },
-        xaxis: {
-            categories: [<?php echo implode(',', $itemNames); ?>]
-        }
+        }]
     };
 
-    // Render the chart
-    var chart = new ApexCharts(document.querySelector("#chart"), options);
-    chart.render();
-    </script>
+
+    myChart.setOption(option);
+</script>
