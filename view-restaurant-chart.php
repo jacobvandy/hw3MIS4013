@@ -28,7 +28,7 @@ while ($resturants = $restaurant->fetch_assoc()) {
     // These labels appear in the legend and in the tooltips when hovering different arcs
     labels: [
 <?php
-$resturant = SelectRestaurant();
+$restaurant = SelectRestaurant();
 while ($resturants = $restaurant->fetch_assoc()) {
     echo "'" . $resturants['Name'] . "', ";
 }
