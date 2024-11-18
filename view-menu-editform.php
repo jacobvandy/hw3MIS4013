@@ -23,7 +23,7 @@
         </div>
         <div class="mb-3">
           <label for="miPrice<?php echo $menus['MenuItemID']; ?>" class="form-label">Price  </label>
-          <input type="text" class="form-control" id="miPrice<?php echo $menus['MenuItemID']; ?>" name="miPrice" value="<?php $menus['Price']; ?>">
+          <input type="text" class="form-control" id="miPrice<?php echo $menus['MenuItemID']; ?>" name="miPrice" value="<?php echo $menus['Price']; ?>">
         </div>  
       
         <input type="hidden" name="mid"value="<?php echo $menus['MenuItemID']; ?>">
