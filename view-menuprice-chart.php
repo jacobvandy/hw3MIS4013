@@ -39,10 +39,9 @@
     };
 
     myChart.setOption(option);
-</script>
 
-<script>
-const initSciChart = async () => {
+
+     const initSciChart = async () => {
 
   const { sciChartSurface, wasmContext } = await SciChartSurface.create("scichart-root", {
     theme: new SciChartJsNavyTheme(),
