@@ -58,8 +58,16 @@
 </script>
 
 <script>
-       const minPrice = _.min(prices);
-       const maxPrice = _.max(prices);
+
+     <?php
+    $Prices = [];
+   
+    while ($menus = $menu->fetch_assoc()) {
+        $Prices[] = $menus['Price'];
+    }
+    ?>
+       const minPrice = _.min(Prices);
+       const maxPrice = _.max(Prices);
 
      document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
     document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
