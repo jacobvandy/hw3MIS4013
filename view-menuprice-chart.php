@@ -36,7 +36,7 @@
     const myChart = echarts.init(chartDom);
 
     const option = {
-        title: { text: 'Menu Prices (using echart library)', left: 'center' },
+        title: { text: 'Menu Prices', left: 'center' },
         tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
         xAxis: { type: 'category', data: itemNames },
         yAxis: { type: 'value', name: 'Price ($)' },
