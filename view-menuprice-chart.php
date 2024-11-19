@@ -47,11 +47,20 @@
     };
 
     myChart.setOption(option);
-const minPrice = d3.min(prices);
-    const maxPrice = d3.max(prices);
+     
+ if (prices.length > 0) {
+        const minPrice = d3.min(prices);
+        const maxPrice = d3.max(prices);
 
-  
-    document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
-    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
+        // Debugging: Check calculated min and max
+        console.log('Min Price:', minPrice);
+        console.log('Max Price:', maxPrice);
 
+        // Update the DOM with the min and max prices
+        document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
+        document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
+    } else {
+        document.getElementById('minPrice').textContent = `No data available`;
+        document.getElementById('maxPrice').textContent = `No data available`;
+    }
 </script>
