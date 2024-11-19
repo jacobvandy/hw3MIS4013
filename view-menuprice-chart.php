@@ -50,7 +50,7 @@
      
 const minPrice = d3.min(<?php
 while ($menus = $menu->fetch_assoc()) {
-    echo $menus['Price'] . ", ";
+    echo $menus['Price'];
 }
   ?>);
 
