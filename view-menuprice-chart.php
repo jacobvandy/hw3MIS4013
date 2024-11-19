@@ -15,7 +15,7 @@
 <div id="priceSummary">
     <h3>Summary (Using d3 library)</h3>
     <p id="minPrice"></p>
-    <p id="maxPrice"></p>
+    
 </div>
 
 <script>
@@ -48,6 +48,10 @@
 
     myChart.setOption(option);
      
-const minPrice = d3.min(prices);
-const maxPrice = d3.max(prices);
+const minPrice = d3.min(<?php
+while ($menus = $menu->fetch_assoc()) {
+    echo $menus['Price'] . ", ";
+}
+  ?>);
+
 </script>
