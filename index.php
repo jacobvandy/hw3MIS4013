@@ -2,7 +2,7 @@
 $pageTitle = "Home";
 include "view-header.php";
 ?>
-    <h1>HW4 MIS4013</h1>
+    <h1>HW6 MIS4013</h1>
 <img id="tbimage" src="TBdecades.jpg" style="height:300px;"/>
 
 
