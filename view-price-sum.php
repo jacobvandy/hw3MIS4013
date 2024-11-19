@@ -25,9 +25,9 @@
     const prices = [
         <?php
         $first = true;
-        while ($menus = $menu->fetch_assoc()) {
+        while ($menus1 = $menu1->fetch_assoc()) {
             if (!$first) echo ", ";
-            echo $menus['Price'];
+            echo $menus1['Price'];
             $first = false;
         }
         ?>
