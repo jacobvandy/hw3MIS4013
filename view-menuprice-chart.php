@@ -16,8 +16,8 @@
 
 <div id="priceSummary">
     <h3>Price Summary</h3>
-    <p id="minPrice">Loading...</p>
-    <p id="maxPrice">Loading...</p>
+    <p id="minPrice"></p>
+    <p id="maxPrice"></p>
 </div>
 
 <script>
@@ -60,16 +60,20 @@
 
 <script>
 
-     <?php
-$menu = SelectMenu();
-    $Prices = [];
-   
-    while ($menus = $menu->fetch_assoc()) {
-        $Prices[] = $menus['Price'];
-    }
-    ?>
-    const Prices = <?php echo json_encode($Prices); ?>;
-   const minPrice = ss.min(Prices);
+     const prices = [
+        <?php
+        $first = true;
+        while ($menus = $menu->fetch_assoc()) {
+            if (!$first) echo ", ";
+            echo $menus['Price'];
+            $first = false;
+        }
+        ?>
+    ];
+
+    console.log("Prices:", prices);
+     
+   const minPrice = ss.min(prices);
     const maxPrice = ss.max(Prices);
 
     // Display min and max prices
