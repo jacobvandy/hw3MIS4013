@@ -5,8 +5,7 @@
 
      
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-
-
+<script>import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";</script>
  <h1>Menu and their Prices</h1>
   
 
@@ -20,7 +19,7 @@
 
 <script>
      
-import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
      
     <?php
     $prices = [];
