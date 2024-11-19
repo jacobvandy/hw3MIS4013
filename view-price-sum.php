@@ -17,8 +17,8 @@
 
 <div id="priceSummary">
     <h3>Price Summary</h3>
-    <p id="minPrice">Loading...</p>
-    <p id="maxPrice">Loading...</p>
+    <p id="minPrice"></p>
+    <p id="maxPrice"></p>
 </div>
 
 <h2>Price Distribution</h2>
