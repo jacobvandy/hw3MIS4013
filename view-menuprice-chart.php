@@ -6,17 +6,7 @@
      
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 
-<script type="module">
-
-import {forceSimulation, forceCollide, forceX} from "https://cdn.jsdelivr.net/npm/d3-force@3/+esm";
-
-const nodes = [{}, {}];
-const simulation = forceSimulation(nodes)
-    .force("x", forceX())
-    .force("collide", forceCollide(5))
-    .on("tick", () => console.log(nodes[0].x));
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
 
  <h1>Menu and their Prices</h1>
   
@@ -24,9 +14,9 @@ const simulation = forceSimulation(nodes)
 <div id="menuChart" style="width: 600px; height: 400px;"></div>
 
 <div id="priceSummary">
-    <h3>Summary (Using d3 library)</h3>
-    <p id="minPrice"></p>
-    
+    <h3>Price Summary</h3>
+    <p id="minPrice">Loading...</p>
+    <p id="maxPrice">Loading...</p>
 </div>
 
 <script>
@@ -44,6 +34,12 @@ const simulation = forceSimulation(nodes)
     const prices = <?php echo json_encode($prices); ?>;
     const itemNames = <?php echo json_encode($itemNames); ?>;
 
+    const minPrice = _.min(prices);
+    const maxPrice = _.max(prices);
+
+     document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
+    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
+     
     const chartDom = document.getElementById('menuChart');
     const myChart = echarts.init(chartDom);
 
@@ -62,6 +58,6 @@ const simulation = forceSimulation(nodes)
 
     myChart.setOption(option);
      
-const minPrice = d3.min(prices);
+
 
 </script>
