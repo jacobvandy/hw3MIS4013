@@ -11,6 +11,13 @@
   
 
 <div id="menuChart" style="width: 600px; height: 400px;"></div>
+
+<div id="priceSummary">
+    <h3>Summary (Using d3 library)</h3>
+    <p id="minPrice"></p>
+    <p id="maxPrice"></p>
+</div>
+
 <script>
     <?php
     $prices = [];
@@ -27,7 +34,7 @@
     const myChart = echarts.init(chartDom);
 
     const option = {
-        title: { text: 'Menu Prices', left: 'center' },
+        title: { text: 'Menu Prices (using echart library)', left: 'center' },
         tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
         xAxis: { type: 'category', data: itemNames },
         yAxis: { type: 'value', name: 'Price ($)' },
@@ -40,8 +47,11 @@
     };
 
     myChart.setOption(option);
+const minPrice = d3.min(prices);
+    const maxPrice = d3.max(prices);
 
-d3.min(prices)
-d3.max(prices)
-   
+  
+    document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
+    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
+
 </script>
