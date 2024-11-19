@@ -6,7 +6,8 @@
      
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/lodash/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-statistics@7.9.0/dist/simple-statistics.min.js"></script> 
+
 
  <h1>Menu and their Prices</h1>
   
@@ -67,11 +68,10 @@
     }
     ?>
     const Prices = <?php echo json_encode($Prices); ?>;
+     const minPrice = ss.min(Prices);
+    const maxPrice = ss.max(Prices);
 
-       const minPrice = _.min(Prices);
-       const maxPrice = _.max(Prices);
-
-     document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
+    // Display min and max prices
+    document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
     document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
-     
 </script>
