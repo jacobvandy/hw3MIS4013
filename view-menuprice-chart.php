@@ -6,7 +6,8 @@
      
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/simple-statistics@7.9.0/dist/simple-statistics.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
+
 
 
  <h1>Menu and their Prices</h1>
