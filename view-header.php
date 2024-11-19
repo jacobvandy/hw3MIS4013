@@ -40,6 +40,9 @@
         <li class="nav-item">
           <a class="nav-link" href="menu-chart.php">Menu Chart</a>
         </li>
+          <li class="nav-item">
+          <a class="nav-link" href="price-sum.php">Price Summary</a>
+        </li>
       </ul>
       
     </div>
