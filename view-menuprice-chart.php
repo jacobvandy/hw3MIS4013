@@ -61,22 +61,28 @@
 
 <script>
 
-     const prices = [
-        <?php
-$menu = SelectMenu();
+   
+      
+
+
+  
+   // Use mathjs to calculate min and max
+    const minPrice = math.min(  <?php
+
         $first = true;
         while ($menus = $menu->fetch_assoc()) {
-            if (!$first) echo ", ";
-            echo $menus['Price'];
-            $first = false;
+           echo $menus['Price'];
+          
         }
-        ?>
-    ];
+        ?>);
+    const maxPrice = math.max  <?php
 
-    console.log("Prices:", prices);
-   // Use mathjs to calculate min and max
-    const minPrice = math.min(prices);
-    const maxPrice = math.max(prices);
+        $first = true;
+        while ($menus = $menu->fetch_assoc()) {
+           echo $menus['Price'];
+          
+        }
+        ?>);
 
     // Update the DOM with min and max prices
     document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
