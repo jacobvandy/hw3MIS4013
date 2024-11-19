@@ -73,11 +73,11 @@ $menu = SelectMenu();
     ];
 
     console.log("Prices:", prices);
-     
-   const minPrice = ss.min(prices);
-    const maxPrice = ss.max(Prices);
+   // Use mathjs to calculate min and max
+    const minPrice = math.min(prices);
+    const maxPrice = math.max(prices);
 
-    // Display min and max prices
-    document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice)}`;
-    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice}`;
+    // Update the DOM with min and max prices
+    document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
+    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
 </script>
