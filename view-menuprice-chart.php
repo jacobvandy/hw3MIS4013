@@ -62,6 +62,7 @@
 
      const prices = [
         <?php
+$menu = SelectMenu();
         $first = true;
         while ($menus = $menu->fetch_assoc()) {
             if (!$first) echo ", ";
