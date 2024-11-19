@@ -1,7 +1,8 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/scichart/index.min.js" crossorigin="anonymous"></script>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
 
 
 
@@ -40,39 +41,7 @@
 
     myChart.setOption(option);
 
-
-     const initSciChart = async () => {
-
-  const { sciChartSurface, wasmContext } = await SciChartSurface.create("scichart-root", {
-    theme: new SciChartJsNavyTheme(),
-    title: "SciChart.js First Chart",
-    titleStyle: { fontSize: 22 }
-  });
-
-  // Create an XAxis and YAxis with growBy padding
-  const growBy = new NumberRange(0.1, 0.1);
-  sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { axisTitle: "X Axis", growBy }));
-  sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { axisTitle: "Y Axis", growBy }));
-
-  // Create a line series with some initial data
-  sciChartSurface.renderableSeries.add(new FastLineRenderableSeries(wasmContext, {
-    stroke: "steelblue",
-    strokeThickness: 3,
-    dataSeries: new XyDataSeries(wasmContext, {
-      xValues: [prices],
-      yValues: [itemNames]
-    }),
-    pointMarker: new EllipsePointMarker(wasmContext, { width: 11, height: 11, fill: "#fff" }),
-    animation: new SweepAnimation({ duration: 300, fadeEffect: true })
-  }));
-
-  // Add some interaction modifiers to show zooming and panning
-  sciChartSurface.chartModifiers.add(
-    new MouseWheelZoomModifier(), 
-    new ZoomPanModifier(), 
-    new ZoomExtentsModifier()
-  );
-};
-
-initSciChart();
+d3.min(prices)
+d3.max(prices)
+   
 </script>
