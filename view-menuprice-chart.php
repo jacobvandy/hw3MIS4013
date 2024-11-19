@@ -34,12 +34,7 @@
     const prices = <?php echo json_encode($prices); ?>;
     const itemNames = <?php echo json_encode($itemNames); ?>;
 
-    const minPrice = _.min(prices);
-    const maxPrice = _.max(prices);
-
-     document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
-    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
-     
+  
     const chartDom = document.getElementById('menuChart');
     const myChart = echarts.init(chartDom);
 
@@ -60,4 +55,13 @@
      
 
 
+</script>
+
+<script>
+       const minPrice = _.min(prices);
+       const maxPrice = _.max(prices);
+
+     document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
+    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
+     
 </script>
