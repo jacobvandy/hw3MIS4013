@@ -61,6 +61,7 @@
 <script>
 
      <?php
+$menu = SelectMenu();
     $Prices = [];
    
     while ($menus = $menu->fetch_assoc()) {
@@ -68,10 +69,10 @@
     }
     ?>
     const Prices = <?php echo json_encode($Prices); ?>;
-     const minPrice = ss.min(Prices);
+   const minPrice = ss.min(Prices);
     const maxPrice = ss.max(Prices);
 
     // Display min and max prices
-    document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
-    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
+    document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice)}`;
+    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice}`;
 </script>
