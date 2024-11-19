@@ -6,7 +6,7 @@
      
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
+
 
 
 
@@ -15,11 +15,6 @@
 
 <div id="menuChart" style="width: 600px; height: 400px;"></div>
 
-<div id="priceSummary">
-    <h3>Price Summary</h3>
-    <p id="minPrice"></p>
-    <p id="maxPrice"></p>
-</div>
 
 <script>
      
@@ -59,32 +54,3 @@
 
 </script>
 
-<script>
-
-   
-      
-
-
-  
-   // Use mathjs to calculate min and max
-    const minPrice = math.min(  <?php
-
-        $first = true;
-        while ($menus = $menu->fetch_assoc()) {
-           echo $menus['Price'];
-          
-        }
-        ?>);
-    const maxPrice = math.max  <?php
-
-        $first = true;
-        while ($menus = $menu->fetch_assoc()) {
-           echo $menus['Price'];
-          
-        }
-        ?>);
-
-    // Update the DOM with min and max prices
-    document.getElementById('minPrice').textContent = `Minimum Price: $${minPrice.toFixed(2)}`;
-    document.getElementById('maxPrice').textContent = `Maximum Price: $${maxPrice.toFixed(2)}`;
-</script>
