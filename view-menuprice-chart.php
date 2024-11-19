@@ -1,8 +1,5 @@
 
 
-<script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-
-<script src="https://d3js.org/d3.v7.min.js"></script>
 
 
 
