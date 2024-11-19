@@ -5,7 +5,19 @@
 
      
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-<script>import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";</script>
+
+<script type="module">
+
+import {forceSimulation, forceCollide, forceX} from "https://cdn.jsdelivr.net/npm/d3-force@3/+esm";
+
+const nodes = [{}, {}];
+const simulation = forceSimulation(nodes)
+    .force("x", forceX())
+    .force("collide", forceCollide(5))
+    .on("tick", () => console.log(nodes[0].x));
+
+</script>
+
  <h1>Menu and their Prices</h1>
   
 
