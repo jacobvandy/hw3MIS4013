@@ -5,7 +5,7 @@
 
      
 <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
-<script src="https://d3js.org/d3.v7.min.js"></script>
+
 
  <h1>Menu and their Prices</h1>
   
@@ -19,6 +19,9 @@
 </div>
 
 <script>
+     
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+     
     <?php
     $prices = [];
     $itemNames = [];
@@ -48,10 +51,6 @@
 
     myChart.setOption(option);
      
-const minPrice = d3.min(<?php
-while ($menus = $menu->fetch_assoc()) {
-    echo $menus['Price'];
-}
-  ?>);
+const minPrice = d3.min(prices);
 
 </script>
