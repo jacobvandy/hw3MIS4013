@@ -66,6 +66,8 @@
         $Prices[] = $menus['Price'];
     }
     ?>
+    const Prices = <?php echo json_encode($Prices); ?>;
+
        const minPrice = _.min(Prices);
        const maxPrice = _.max(Prices);
 
